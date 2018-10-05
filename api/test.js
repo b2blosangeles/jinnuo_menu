@@ -15,6 +15,6 @@ connection.query(str, function (error, results, fields) {
   if (error) {
     res.send({status:'error', value:error.message});
   } else {
-    res.send({status:'success', value:results});
+    res.send({status:'success1', value:results});
   }
 });
