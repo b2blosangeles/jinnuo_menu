@@ -1,9 +1,11 @@
-let cfg0 = {
-        "host":"localhost",
-        "user":"webuser",
-        "password":"Montreal107#",
-        "database":"test"
-};
+let config = {};
+try {
+	delete require.cache['/var/qalet_config.json'];
+	config = require('/var/qalet_config.json');
+} catch (err) {}
+
+let cfg0 = config.database.master;
+
 var connection = pkg.mysql.createConnection(cfg0);
 connection.connect();
 var str = "SELECT * FROM `menu`; ";
